@@ -64,7 +64,20 @@ module.exports = {
                     },
                     'css-loader'
                 ]
-            }
+            },
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: 'img/[name][hash].[ext]'
+                    }
+                }]
+            },
+            {
+                test: /\.(ttf|woff|woff2|eot)$/,
+                use: ['file-loader']
+            },
         ]
     }
 }
