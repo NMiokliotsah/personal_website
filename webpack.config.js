@@ -33,6 +33,9 @@ module.exports = {
         filename: filename('js'),
         path: path.resolve(__dirname, 'dist')
     },
+    resolve: {
+        extensions: ['.js', '.png']
+    },
     devServer: {
         port: 4000,
         hot: isDev
@@ -40,7 +43,7 @@ module.exports = {
     optimization: optimization(),
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'index.html',
+            template: './index.html',
             minify: {
                 collapseWhitespace: !isDev
             }
@@ -70,13 +73,17 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: 'img/[name][hash].[ext]'
+                        name: 'images/[name][hash].[ext]',
                     }
                 }]
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
                 use: ['file-loader']
+            },
+            {
+                test: /\.html$/i,
+                loader: 'html-loader',
             },
         ]
     }
