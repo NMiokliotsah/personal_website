@@ -314,7 +314,7 @@ section.dark .section-title::after {
     background-color: #48dbfb;
 }
 
-.sevice:hover .icon {
+.service:hover .icon {
     color: #fff;
 }
 
@@ -350,7 +350,7 @@ section.dark .section-title::after {
     width: 16px;
     height: 16px;
     background-color: #48dbfb;
-    left: -28px;
+    left: -27px;
     top: 30px;
     border-radius: 50%;
 }
